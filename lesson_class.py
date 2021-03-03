@@ -1,9 +1,7 @@
 """
-В качестве ссылки на репоз. составить 3 различных класса:
-- объект любой, метод инит, в котором от 3х до 5ти атрибутов
-- для конструктора - в кач. аргумента
-- аннотация типов, документация, описание тех параметра.
-- написать 3-5 методов, которые будут реализовывать работу объекта
+Класс "изделие"(Product), который записывает атрибуты введенные пользователем в БД.
+Класс "калькуляция"(Offer), который берёт данные из БД, и с помощью методов выдаёт значение стоимости, 
+добавляет её в ту же БД.
 """
 
 
@@ -18,15 +16,16 @@ class Product:
        - маршрут изготовления по цехам
 """
 
+
     def __init__(self, name: str, decimal: str, material:str, weight: float, rate: float, coating: bool, labour: int, operation):
 
         self.name = name
         self.decimal = decimal
         self.material = material #material - список
-        self.weight = weight
-        self.rate = rate
+        self.weight = weight # масса детали
+        self.rate = rate # н.р. материала +25%
         self.coating = coating #coating - список
-        self.labour = labour
+        self.labour = labour #покрытие +10%
         self.operation = operation #operation - словарь (ключ - название, значение - код)
 
     def consumption_rate(rate):
